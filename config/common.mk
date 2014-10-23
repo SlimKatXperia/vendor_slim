@@ -147,6 +147,11 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 endif
 
+# Chromium Prebuilt
+ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+-include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
+endif
+
 # Versioning System
 # KitKat SlimKat freeze code
 PRODUCT_VERSION_MAJOR = 4.4.4
